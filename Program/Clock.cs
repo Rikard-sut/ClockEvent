@@ -10,6 +10,7 @@ namespace Program
     class Clock
     {
         public event EventHandler<ClockEventArgs> ClockRunningEventHandler;
+        public bool StopClock { get; set; } = false;
         public Clock()
         {
 
@@ -17,7 +18,6 @@ namespace Program
         public void RunClock()
         {
             ClockEventArgs clockEventArgs = new ClockEventArgs(DateTime.Now);
-            Console.WriteLine("Tryck enter för att stoppa");
             while (true)
             {
                 clockEventArgs.CurrentTime = DateTime.Now;

@@ -16,6 +16,13 @@ namespace Program
             Display display = new Display();
             clock.ClockRunningEventHandler += new EventHandler<Clock.ClockEventArgs>(Display.PrintTime);
             clock.ClockRunningEventHandler += new EventHandler<Clock.ClockEventArgs>(FileLogger.Log);
+            var task = new Task(new Action(clock.RunClock));
+            task.Start();
+            Console.WriteLine("Press Enter to stop watch");
+            if(Console.ReadKey().Key == ConsoleKey.Enter)
+            {
+                clock.StopClock = true;
+            }
             clock.RunClock();
         }
     }
