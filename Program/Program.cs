@@ -11,7 +11,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            
+
             Clock clock = new Clock();
             Display display = new Display();
             clock.ClockRunningEventHandler += new EventHandler<Clock.ClockEventArgs>(Display.PrintTime);
@@ -19,7 +19,7 @@ namespace Program
             var task = new Task(new Action(clock.RunClock));
             task.Start();
             Console.WriteLine("Press Enter to stop watch");
-            if(Console.ReadKey().Key == ConsoleKey.Enter)
+            if (Console.ReadKey().Key == ConsoleKey.Enter)
             {
                 clock.StopClock = true;
             }

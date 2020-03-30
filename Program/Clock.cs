@@ -30,7 +30,7 @@ namespace Program
                     Console.WriteLine("Stopped clock");
                     break;
                 }
-                
+
             }
         }
         public class ClockEventArgs : EventArgs
