@@ -23,7 +23,7 @@ namespace Program
             {
                 clock.StopClock = true;
             }
-            clock.RunClock();
+            Console.ReadKey();
         }
     }
 }

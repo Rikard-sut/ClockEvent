@@ -22,10 +22,12 @@ namespace Program
             {
                 clockEventArgs.CurrentTime = DateTime.Now;
                 Thread.Sleep(1000);
+                Console.Clear();
                 ClockRunningEventHandler?.Invoke(this, clockEventArgs);
 
                 if (clockEventArgs.CancelCounting)
                 {
+                    Console.WriteLine("Stopped clock");
                     break;
                 }
                 
